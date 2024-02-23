@@ -1,22 +1,28 @@
 <?php
 
 require_once 'src/Displayable.php';
+require_once 'src/Buyable.php';
 
 class SimpleProduct implements Displayable
 {
     public string $title;
     public string $description;
     public float $price;
-    public float $discountPrice;
+    protected float  $discountPrice;
     public int|false $discount;
 
-    public function __construct(string $title, string $description, float $price, $discount = false)
+    public function __construct(string $title, string $description, float $price, int|false $discount = false)
     {
         $this->title = $title;
         $this->description = $description;
         $this->price = $price;
         $this->discount = $discount;
-        $this->discountPrice = round((1 - ($discount / 100)) * $price, 2);
+        if ($discount) {
+            $this->discountPrice = round((1 - ($discount / 100)) * $price, 2);
+        } else
+        {
+            $this->discountPrice = $price;
+        }
     }
 
     public function getDisplay(): string
