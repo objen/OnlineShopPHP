@@ -1,14 +1,17 @@
 <?php
 
 require_once 'src/SimpleProduct.php';
-class Basket
+require_once 'src/Displayable.php';
+require_once 'src/User.php';
+require_once 'src/Business.php';
+class Basket implements Displayable
 {
     public array  $products;
-    public string $customerName;
+    public User $customer;
 
-    public function __construct (string $customerName)
+    public function __construct (User $customer)
     {
-        $this->customerName = $customerName;
+        $this->customer = $customer;
     }
     public function addToBasket(SimpleProduct $product): void
     {
@@ -22,10 +25,4 @@ class Basket
         }
         return '</ul>';
     }
-    public function quickDisplay(): string
-    {
-        return 'Coming soon';
-        //a quick overview of basket?
-    }
-
 }
