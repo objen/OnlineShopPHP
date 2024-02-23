@@ -3,7 +3,7 @@
 require_once 'src/Displayable.php';
 require_once 'src/QuickDisplay.php';
 
-class SimpleProduct implements Displayable, QuickDisplay
+abstract class BaseProduct implements Displayable, QuickDisplay
 {
     public string $title;
     public string $description;

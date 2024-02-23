@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/SimpleProduct.php';
+require_once 'src/BaseProduct.php';
 require_once 'src/Displayable.php';
 require_once 'src/User.php';
 require_once 'src/Business.php';
@@ -14,7 +14,7 @@ class Basket implements Displayable
     {
         $this->customer = $customer;
     }
-    public function addToBasket(SimpleProduct $product): void
+    public function addToBasket(BaseProduct $product): void
     {
         $this->products[] = $product;
     }
