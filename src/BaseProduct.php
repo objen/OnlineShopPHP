@@ -10,6 +10,7 @@ abstract class BaseProduct implements Displayable, QuickDisplay
     public float $price;
     public float  $discountPrice;
     public int|false $discount;
+    public float $shippingCost;
 
     public function __construct(string $title, string $description, float $price, int|false $discount = false)
     {
@@ -46,5 +47,5 @@ abstract class BaseProduct implements Displayable, QuickDisplay
     {
         return $this->title . ' - ' . $this->discountPrice;
     }
-
+    abstract public function getShippingCosts(): float;
 }
