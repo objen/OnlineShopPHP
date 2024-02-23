@@ -1,7 +1,5 @@
 <?php
-require_once 'src/Address.php';
-Abstract class User implements Address
-{
+Abstract class User {
     public string $firstName;
     public string $lastName;
     public string $addressStreet;

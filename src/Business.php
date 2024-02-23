@@ -1,6 +1,6 @@
 <?php
 require_once 'src/User.php';
-require_once 'src/Address.php';
+
 class Business extends User
 {
     public string $businessName;
