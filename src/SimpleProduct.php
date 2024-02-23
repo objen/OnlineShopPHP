@@ -8,7 +8,7 @@ class SimpleProduct implements Displayable, QuickDisplay
     public string $title;
     public string $description;
     public float $price;
-    protected float  $discountPrice;
+    public float  $discountPrice;
     public int|false $discount;
 
     public function __construct(string $title, string $description, float $price, int|false $discount = false)

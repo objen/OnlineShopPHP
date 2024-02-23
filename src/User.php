@@ -1,6 +1,6 @@
 <?php
 require_once 'src/Address.php';
-class User implements Address
+Abstract class User implements Address
 {
     public string $firstName;
     public string $lastName;
@@ -19,10 +19,6 @@ class User implements Address
         $this->nameLine = $this->lastName . ', ' . $this->firstName;
         $this->addressLine  = $this->addressStreet . ' ' . $this->postcode;
     }
-
-    public function getAddress(): string
-    {
-       return '<p>' . $this->nameLine . '</br>' . $this->addressLine . '</p>';
-    }
+    abstract public function getAddress(): string;
 
 }

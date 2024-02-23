@@ -16,4 +16,5 @@ class Business extends User
     {
         return '<p>' . $this->nameLine . '</br>' . $this->businessName . '</br>' . $this->addressLine . '</p>';
     }
+
 }

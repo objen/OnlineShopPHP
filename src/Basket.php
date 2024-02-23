@@ -8,6 +8,7 @@ class Basket implements Displayable
 {
     public array  $products;
     public User $customer;
+    public float $totalPrice = 0;
 
     public function __construct (User $customer)
     {
@@ -24,5 +25,21 @@ class Basket implements Displayable
             echo '<li>' . $product->quickDisplay() . '</li>';
         }
         return '</ul>';
+    }
+    public function getTotalPrice(): float|string
+    {
+        if(isset($this->products)) {
+            foreach ($this->products as $product) {
+                $this->totalPrice += $product->discountPrice;
+            }
+            if (isset($this->customer->vatNumber))
+            {
+                return $this->totalPrice;
+            } else
+                return round($this->totalPrice * 1.2, 2);
+
+        } else {
+            return 'Basket is empty';
+        }
     }
 }
