@@ -1,7 +1,6 @@
 <?php
 
 require_once 'src/Displayable.php';
-require_once 'src/Buyable.php';
 
 class SimpleProduct implements Displayable
 {
@@ -42,4 +41,9 @@ class SimpleProduct implements Displayable
             </div>';
         }
     }
+    public function quickDisplay(): string
+    {
+        return $this->title . ' - ' . $this->discountPrice;
+    }
+
 }
