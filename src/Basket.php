@@ -81,13 +81,4 @@ class Basket implements Displayable
             return 'Basket is empty';
         }
     }
-
-    //    display for debug
-    public function showBasketCost ()
-    {
-        return 'Products: ' . $this->productPrice . '</br>
-                Shipping: ' . $this->shippingPrice . '</br>
-                Vat: ' . $this->vatDue . '</br> 
-                Total: ' . $this->totalBasket;
-    }
 }

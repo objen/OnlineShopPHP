@@ -18,13 +18,18 @@ $jones = new Customer('Sarah', 'Jones', '60 Acacia Avenue', 'BS7 8AF', 'sj@jones
 
 $inca = new Business('Sarah', 'Jones', '60 Acacia Avenue', 'BS7 8AF', 'sj@jones.com', 'Inca Shipping', 'GB98734098237409238');
 
-$basket = new Basket ($inca);
+$basket = new Basket ($jones);
 
 
 $basket->addToBasket($jumper);
 $basket->addToBasket($coat);
 $basket->addToBasket($sofa);
+$basket->addToBasket($wardrobe);
 echo $basket->getDisplay();
 
 echo $basket->getFullBasketCost();
+echo '<br>products: ' . $basket->productPrice . '<br>
+       Shipping: ' . $basket->shippingPrice . '<br>
+       Vat due: ' . $basket->vatDue;
+
 
